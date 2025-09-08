@@ -1,20 +1,20 @@
-import webpack from "webpack";
-import { BuildOptions } from "./types/config";
-import { buildPlagins } from "./buildPlagins";
-import { buildLoaders } from "./buildLoaders";
-import { buildResolvers } from "./buildResolvers";
-import { buildDevServer } from "./buildDevServer";
+import webpack from 'webpack';
+import { BuildOptions } from './types/config';
+import { buildPlagins } from './buildPlagins';
+import { buildLoaders } from './buildLoaders';
+import { buildResolvers } from './buildResolvers';
+import { buildDevServer } from './buildDevServer';
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
-    const {mode, paths, isDev} = options;
+    const { mode, paths, isDev } = options;
 
-    return  {
+    return {
         mode,
         entry: paths.entry,
         output: {
-            filename: "[name].[contenthash].js",
+            filename: '[name].[contenthash].js',
             path: paths.build,
-            clean: true
+            clean: true,
         },
         plugins: buildPlagins(options),
         module: {
@@ -22,6 +22,6 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         },
         resolve: buildResolvers(options),
         devtool: isDev ? 'inline-source-map' : false,
-        devServer: isDev ? buildDevServer(options) : undefined
-    }
+        devServer: isDev ? buildDevServer(options) : undefined,
+    };
 }

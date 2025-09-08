@@ -4,7 +4,9 @@ declare module '*.module.scss' {
 }
 
 declare module '*.svg' {
-    const SVG: React.FC<React.SVGProps<SVGSVGElement>>;
+    import { FC, SVGProps } from 'react';
+
+    const SVG: FC<SVGProps<SVGSVGElement>>;
     export = SVG;
 }
 
@@ -12,4 +14,4 @@ declare module '*.jpeg';
 declare module '*.jpg';
 declare module '*.png';
 
-declare const __IS_DEV__: boolean
+declare const __IS_DEV__: boolean;
