@@ -19,11 +19,18 @@ const Sidebar: FC<SidebarProps> = ({ className }) => {
 
     return (
         <aside
+            data-testid="sidebar"
             className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
                 className,
             ])}
         >
-            <button type="button" onClick={onToggle}>{t('otkryt')}</button>
+            <button
+                data-testid="sidebar-toggle"
+                type="button"
+                onClick={onToggle}
+            >
+                {t('otkryt')}
+            </button>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher />
