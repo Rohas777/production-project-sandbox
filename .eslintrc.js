@@ -40,6 +40,8 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'linebreak-style': 'off',
         'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'arrow-body-style': 1,
+        'react/self-closing-comp': 1,
     },
     globals: {
         __IS_DEV__: true,
