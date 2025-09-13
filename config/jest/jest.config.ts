@@ -40,7 +40,7 @@ const config: Config = {
     transform: {
         '^.+\\.(ts|tsx)?$': 'ts-jest',
         '^.+\\.(js|jsx)$': 'babel-jest',
-        '^.+\\.svg$': '<rootDir>/config/jest/fileTransformer.js',
+        '^.+\\.svg$': '<rootDir>/config/jest/fileTransformer.ts',
     },
 };
 
