@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import Button, { ThemeButton } from '@/shared/ui/Button/Button';
+import Button, { ButtonTheme } from '@/shared/ui/Button/Button';
 
 interface BugButtonProps {
     className?: string
@@ -19,7 +19,7 @@ const BugButton: FC<BugButtonProps> = ({ className }) => {
 
     return (
         <Button
-            theme={ThemeButton.PRIMARY}
+            theme={ButtonTheme.PRIMARY}
             className={classNames('', {}, [className])}
             onClick={throwError}
         // eslint-disable-next-line i18next/no-literal-string

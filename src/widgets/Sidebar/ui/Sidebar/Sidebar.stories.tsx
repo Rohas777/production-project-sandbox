@@ -1,12 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import { fn } from 'storybook/test';
-
 import Sidebar from './Sidebar';
 import { StyleDecorator } from '@/shared/config/storybook/StyleDecorator/StyleDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/app/providers/ThemeProvider';
-import { CenteredDecorator } from '@/shared/config/storybook/CenteredDecorator/CenteredDecorator';
+import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
 
 const meta = {
     title: 'widget/Sidebar',
@@ -17,9 +15,9 @@ const meta = {
     tags: ['autodocs'],
     argTypes: {
     },
-    // args: { onClick: fn() },
     decorators: [
         StyleDecorator,
+        RouterDecorator,
     ],
 } satisfies Meta<typeof Sidebar>;
 

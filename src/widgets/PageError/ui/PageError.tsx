@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import cls from './PageError.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import Button, { ThemeButton } from '@/shared/ui/Button/Button';
+import Button, { ButtonTheme } from '@/shared/ui/Button/Button';
 
 interface PageErrorProps {
     className?: string
@@ -19,7 +19,7 @@ const PageError:FC<PageErrorProps> = ({ className }) => {
     return (
         <div className={classNames(cls.pageError, {}, [className])}>
             <h1>{t('Something went error')}</h1>
-            <Button theme={ThemeButton.PRIMARY} onClick={reloadPage}>
+            <Button theme={ButtonTheme.PRIMARY} onClick={reloadPage}>
                 {t('Refresh page')}
             </Button>
         </div>
