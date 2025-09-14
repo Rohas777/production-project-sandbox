@@ -12,10 +12,11 @@
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
-    "test:ui": "chromatic --force-rebuild",
-    "test:ui:accept": "chromatic --auto-accept-changes",
     "storybook": "storybook dev -p 6006 -c ./config/.storybook",
-    "storybook:build": "storybook build -c ./config/.storybook"
+    "storybook:build": "storybook build -c ./config/.storybook",
+    "test:ui": "chromatic --storybook-build-dir ./storybook-static",
+    "test:ui:build": "chromatic --force-rebuild",
+    "test:ui:accept": "chromatic --auto-accept-changes"
   },
   "keywords": [],
   "author": "",
