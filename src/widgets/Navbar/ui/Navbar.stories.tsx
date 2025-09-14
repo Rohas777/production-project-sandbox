@@ -15,10 +15,18 @@ const meta = {
     tags: ['autodocs'],
     argTypes: {
     },
-    // args: { onClick: fn() },
     decorators: [
         StyleDecorator,
         RouterDecorator,
+        (Story) => {
+            if (!document.getElementById('root')) {
+                const portalRoot = document.createElement('div');
+                portalRoot.id = ('root');
+                document.body.appendChild(portalRoot);
+            }
+            document.getElementById('root').classList.add('app');
+            return <Story />;
+        },
     ],
 } satisfies Meta<typeof Navbar>;
 

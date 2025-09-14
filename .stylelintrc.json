@@ -7,6 +7,7 @@
         "unit-no-unknown": [
             true,
             {"ignoreUnits": ["dvh", "svh", "lvh"]}
-        ]
+        ],
+        "color-function-notation": null
     }
 }

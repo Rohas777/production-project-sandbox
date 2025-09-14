@@ -5,12 +5,13 @@ import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from '../lib/ThemeContex
 
 interface ThemeProviderProps {
     children: ReactNode;
+    initialTheme?: Theme;
 }
 
 const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT;
 
-const ThemeProvider:FC<ThemeProviderProps> = ({ children }) => {
-    const [theme, setTheme] = useState<Theme>(defaultTheme);
+const ThemeProvider:FC<ThemeProviderProps> = ({ children, initialTheme = Theme.LIGHT }) => {
+    const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
     const [prevTheme, setPrevTheme] = useState<Theme | null>(null);
 
     const defaultProps = useMemo(() => ({
@@ -24,7 +25,7 @@ const ThemeProvider:FC<ThemeProviderProps> = ({ children }) => {
         }
         setPrevTheme(theme);
         document.getElementById('root').classList.add(theme);
-    }, [theme]);
+    }, [theme, prevTheme]);
 
     return (
         <ThemeContext.Provider value={defaultProps}>
