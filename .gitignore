@@ -3,3 +3,4 @@
 /.vscode
 *storybook.log
 storybook-static
+.env
