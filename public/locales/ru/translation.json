@@ -9,5 +9,7 @@
   "Refresh page": "Обновить страницу",
   "not-found": "Страница не найдена",
   "short-lang-name": "RU",
-  "sign-in": "Войти"
+  "sign-in": "Войти",
+  "username": "Имя пользователя",
+  "password": "Пароль"
 }

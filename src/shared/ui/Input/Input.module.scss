@@ -1,0 +1,39 @@
+.label {
+    padding-top: 15px;
+    position: relative;
+
+    .input {
+        background-color: var(--bg-color);
+        color: var(--secondary-color);
+        border: 1px solid var(--secondary-color);
+        width: 100%;
+        border-radius: 5px;
+        padding: 5px 10px;
+        outline: none !important;
+        transition: all 0.2s;
+    }
+
+    .title {
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        pointer-events: none;
+        transition: all 0.2s;
+    }
+
+    &:has(.input:focus, .input:not(:placeholder-shown)) {
+        .input {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .title {
+            top: 3px;
+            left: 5px;
+            font-size: 12px;
+            padding-inline: 3px;
+            color: var(--primary-color);
+            background-color: var(--bg-color);
+        }
+    }
+}

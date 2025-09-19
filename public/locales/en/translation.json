@@ -7,5 +7,9 @@
   "О нас": "About us",
   "not-found": "Page not found",
   "short-lang-name": "EN",
-  "sign-in": "Sign in"
+  "sign-in": "Sign in",
+  "username": "Username",
+  "password": "Password",
+  "Refresh page": "Refresh the page",
+  "Something went error": "Something went wrong"
 }
