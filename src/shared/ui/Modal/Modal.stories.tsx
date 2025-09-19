@@ -39,8 +39,8 @@ export const Light: Story = {
     decorators: [
         ThemeDecorator(Theme.LIGHT),
         (Story) => {
-            document.getElementById('root').classList.remove('dark');
-            document.getElementById('root').classList.add('light');
+            document.getElementById('root').classList.remove('app_dark_theme');
+            document.getElementById('root').classList.add('app_light_theme');
 
             return <Story />;
         },
@@ -54,8 +54,8 @@ export const Dark: Story = {
     decorators: [
         ThemeDecorator(Theme.DARK),
         (Story) => {
-            document.getElementById('root').classList.remove('light');
-            document.getElementById('root').classList.add('dark');
+            document.getElementById('root').classList.remove('app_light_theme');
+            document.getElementById('root').classList.add('app_dark_theme');
 
             return <Story />;
         },

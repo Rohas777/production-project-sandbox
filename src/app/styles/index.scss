@@ -3,7 +3,7 @@
 @use "themes/light";
 @use "themes/dark";
 
-#root {
+body {
     font: var(--font-m);
     color: var(--primary-color);
 }
