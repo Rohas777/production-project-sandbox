@@ -28,6 +28,7 @@ const Modal:FC<ModalProps> = (props) => {
         lazy,
     } = props;
     const [isMounted, setIsMounted] = useState(false);
+    const [styleMods, setStyleMods] = useState<Record<string, boolean>>();
 
     const closeHandler = useCallback(() => {
         if (onClose) onClose();
@@ -48,14 +49,27 @@ const Modal:FC<ModalProps> = (props) => {
     }, [isOpen, onKeyDown]);
 
     useEffect(() => {
+        let initialTimeout: ReturnType<typeof setTimeout>;
         if (isOpen) {
             setIsMounted(true);
         }
-    }, [isOpen]);
 
-    const styleMods: Record<string, boolean> = {
-        [cls.opened]: isOpen,
-    };
+        if (!isMounted) {
+            initialTimeout = setTimeout(() => setStyleMods({
+                ...styleMods,
+                [cls.opened]: isOpen,
+            }));
+        } else {
+            setStyleMods({
+                ...styleMods,
+                [cls.opened]: isOpen,
+            });
+        }
+
+        return () => {
+            clearTimeout(initialTimeout);
+        };
+    }, [isOpen]);
 
     if (lazy && !isMounted) return null;
 

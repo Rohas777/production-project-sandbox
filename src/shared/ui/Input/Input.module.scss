@@ -19,6 +19,7 @@
         left: 10px;
         pointer-events: none;
         transition: all 0.2s;
+        opacity: 0.6;
     }
 
     &:has(.input:focus, .input:not(:placeholder-shown)) {
@@ -28,12 +29,14 @@
         }
 
         .title {
-            top: 3px;
+            top: 8px;
             left: 5px;
             font-size: 12px;
             padding-inline: 3px;
             color: var(--primary-color);
             background-color: var(--bg-color);
+            opacity: 1;
+            line-height: 100%;
         }
     }
 }
